@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Somehing useful'''
+''Somehing useful'''
 import requests
 import sys
 
