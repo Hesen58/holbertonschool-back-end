@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 '''Something useful'''
-import csv
+import json
 import requests
 import sys
-
 
 if len(sys.argv) == 2:
     userId = sys.argv[1]
@@ -12,9 +11,10 @@ if len(sys.argv) == 2:
     rTodos = requests.get(f"{url}/users/{userId}/todos")
     rUser = rUser.json()
     rTodos = rTodos.json()
-    result = ""
-    with open(f"{userId}.csv", "w") as f:
-        w = csv.writer(f)
-        for i in rTodos:
-            w.writerow([userId, rUser['name'],
-                        i['completed'], i['title']])
+    res = {f"{userId}": []}
+    for i in rTodos:
+        res[f"{userId}"].append({"task": i['title'],
+                                  "completed": i['completed'],
+                                  "username": rUser['username']})
+    with open(f"{userId}.json", "w") as f:
+        json.dump(res, f)
