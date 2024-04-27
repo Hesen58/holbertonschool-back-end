@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 '''Something useful'''
 import csv
-import sys
 import requests
+import sys
 
 
 if len(sys.argv) == 2:
