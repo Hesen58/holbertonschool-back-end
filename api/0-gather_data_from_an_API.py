@@ -13,10 +13,12 @@ if len(sys.argv) == 2:
     rtodos = rtodos.json()
     total = len(rtodos)
     true = 0
-
-    print(f"Employee {ruser['name']} is done with tasks({true}/{total}):")
+    zor = ""
 
     for i in rtodos:
         if i['completed'] is True:
-            print(f"\t {i['title']}")
+            zor += f"\t {i['title']}\n"
             true += 1
+
+    print(f"Employee {ruser['name']} is done with tasks({true}/{total}):")
+    print(f"{zor}", end="")
