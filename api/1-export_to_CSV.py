@@ -16,5 +16,5 @@ if len(sys.argv) == 2:
     with open(f"{userId}.csv", "w") as f:
         for i in rTodos:
             result += (f"\"{userId}\",\"{rUser['username']}\"," +
-            f"\"{i['completed']}\",\"{i['title']}\"\n")
+                       f"\"{i['completed']}\",\"{i['title']}\"\n")
         f.write(result)
