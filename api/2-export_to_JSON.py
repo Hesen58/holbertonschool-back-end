@@ -14,7 +14,7 @@ if len(sys.argv) == 2:
     res = {f"{userId}": []}
     for i in rTodos:
         res[f"{userId}"].append({"task": i['title'],
-                                  "completed": i['completed'],
-                                  "username": rUser['username']})
+                                 "completed": i['completed'],
+                                 "username": rUser['username']})
     with open(f"{userId}.json", "w") as f:
         json.dump(res, f)
